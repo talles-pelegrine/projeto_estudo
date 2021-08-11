@@ -1,5 +1,7 @@
 package com.study.Study.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +18,7 @@ public class Person {
     @NotNull
     private String name;
     @NotNull
+    @JsonFormat(pattern="dd-MM-yyyy")
     private Date birthday;
 
     public Long getId() {

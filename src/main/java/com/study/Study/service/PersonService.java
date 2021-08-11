@@ -54,7 +54,7 @@ public class PersonService {
             logger.info("PERSON NOT FOUND - SERVICE");
             return ResponseEntity.notFound().build();
         }
-        BeanUtils.copyProperties(person, personOptional, "id");
+        BeanUtils.copyProperties(person, personOptional.get(), "id");
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(iPersonRepository.save(personOptional.get()));
